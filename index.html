@@ -172,7 +172,7 @@ function checkout(){
  let total=0;
  Object.entries(cart).forEach(([id,qty])=>{const p=products.find(x=>x.id==id);lines.push(`${p.name} × ${qty} — ${money(p.price*qty)}`);total+=p.price*qty});
  lines.push("",`الإجمالي: ${money(total)}`,"الاسم:","العنوان:");
- if(phone==="249000000000"){alert("لايوجد رقم واتساب مرفق-نسخة تجريبية.");return}
+ if(phone==="249000000000"){alert("لايوجد رقم واتساب مرفق-نسخة تجريبية .");return}
  window.open("https://wa.me/"+phone+"?text="+encodeURIComponent(lines.join("\n")),"_blank");
 }
 document.getElementById('filters').addEventListener('click',e=>{const b=e.target.closest('button[data-cat]');if(!b)return;activeCat=b.dataset.cat;document.querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x===b));render()});
